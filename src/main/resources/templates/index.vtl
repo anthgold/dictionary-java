@@ -1,16 +1,26 @@
-<h1>Something red; then something green</h1>
-<h3>Enter the length and width of a rectangle and I will tell you if it's a square!</h3>
+<h1>Dictionary</h1>
 
-<form action='/rectangle'>
-  <div class="form-group">
-    <label for="length">Length</label>
-    <input id="length" name="length" class="form-control" type="text">
-  </div>
+<!-- <a href="/tasks/new">Add a new word</a> I expect this will come back in later -->
 
-  <div class="form-group">
-    <label for="width">Width</label>
-    <input id="width" name="width" class="form-control" type="text">
-  </div>
+<!-- We will take the line below out, because we will move it -->
+<h1>Task list!</h1>
 
-  <button type="submit" class="btn">Go!</button>
-</form>
+<!-- I expect this will come back in later
+#if ($tasks)
+<ul>
+  #foreach ($task in $tasks)
+  <li>$task.getDescription()</li>
+  #end
+</ul>
+#else
+  <p>No tasks!</p>
+#end -->
+
+<p>Add a new Word:</p>
+
+<form action="/words" method="post">
+  <label for="term">Enter a word</label>
+  <input id="term" name="term" type="text"> <!-- does this have to be term as in Word.java?  -->
+
+  <button type="submit" class="btn btn-default">Add word</button>
+</form> 
