@@ -9,13 +9,13 @@ public class WordTest {
     assertEquals(true, myWord instanceof Word);
   }
 
-  @Test // nameOfFunction_testCase_expectedResult()
+  @Test
   public void Word_instantiatesWithDescription_String() {
     Word myWord = new Word("contrition");
     assertEquals("contrition", myWord.getTerm());
   }
 
-  @Test // nameOfFunction_testCase_expectedResult()
+  @Test // this will allow us to retrieve all words entered, or a "dictionary"
   public void all_returnsAllInstancesOfWord_true() {
     Word firstWord = new Word("contrition");
     Word secondWord = new Word("home");
