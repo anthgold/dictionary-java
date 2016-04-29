@@ -1,7 +1,7 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class DictionaryTest {
+public class WordTest {
 
   @Test // nameOfFunction_testCase_expectedResult()
   public void Word_instantiatesCorrectly_true() {
