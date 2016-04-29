@@ -15,4 +15,12 @@ public class WordTest {
     assertEquals("contrition", myWord.getTerm());
   }
 
+  @Test // nameOfFunction_testCase_expectedResult()
+  public void all_returnsAllInstancesOfWord_true() {
+    Word firstWord = new Word("contrition");
+    Word secondWord = new Word("home");
+    assertTrue(Word.all().contains(firstWord));
+    assertTrue(Word.all().contains(secondWord));
+  }
+
 }
