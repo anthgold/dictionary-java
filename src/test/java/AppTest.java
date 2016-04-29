@@ -26,7 +26,7 @@ public class AppTest extends FluentTest {
   @Test
   public void wordIsCreatedTest() {
     goTo("http://localhost:4567/");
-    fill(#term).with("contrition");
+    fill("#term").with("contrition");
     submit(".btn");
     assertThat(pageSource()).contains("Your word has been added.");
   }
