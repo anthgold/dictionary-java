@@ -38,7 +38,11 @@ public class AppTest extends FluentTest {
     fill("#term").with("contrition");
     submit(".btn");
     click("a", withText("Go Back"));
+<<<<<<< HEAD
     assertThat(pageSource()).contains("contrition");
+=======
+    assertThat(pageSource()).contains("Your word has been added.");
+>>>>>>> 2a19bb7e0f0cdcf63dff5b9f6fe14e072339c2e4
   }
 
 }
