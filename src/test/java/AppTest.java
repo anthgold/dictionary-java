@@ -27,7 +27,7 @@ public class AppTest extends FluentTest {
   public void squareTestIsASquare() {
     goTo("http://localhost:4567/");
     // test goes here
-    // assertFoo(pageSource()).contains("Your foo is a bar!"); */
-  }
+    // assertFoo(pageSource()).contains("Your foo is a bar!");
+  } */
 
 }
