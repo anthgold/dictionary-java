@@ -9,4 +9,10 @@ public class WordTest {
     assertEquals(true, myWord instanceof Word);
   }
 
+  @Test // nameOfFunction_testCase_expectedResult()
+  public void Word_instantiatesWithDescription_String() {
+    Word myWord = new Word("contrition");
+    assertEquals("contrition", myWord.getDescription());
+  }
+
 }
