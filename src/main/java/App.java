@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import spark.ModelAndView;
@@ -11,16 +12,24 @@ public class App {
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("word", request.session().attribute("word"));
+      model.put("words", request.session().attribute("words"));
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/words", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+
+      ArrayList<Word> words = request.session()attribute("words");
+      if (words == null) {
+        words = new ArrayList<Word>();
+        request.session().attribute("words", words);
+      }
+
       String term = request.queryParams("term");
       Word newWord = new Word(term);
-      request.session().attribute("word", newWord);
+      words.add(newWord);
+
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

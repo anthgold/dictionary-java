@@ -41,4 +41,17 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("contrition");
   }
 
+  @Test
+  public void mutltipleWordsAreDisplayedTest() {
+    goTo("http://localhost:4567/");
+    fill("#term").with("contrition");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    fill("#term").with("homeless");
+    submit(".btn");
+    click("a", withText("Go Back"));
+    assertThat(pageSource()).contains("contrition");
+    assertThat(pageSource()).contains("homeless");
+  }
+
 }
