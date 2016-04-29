@@ -23,4 +23,11 @@ public class WordTest {
     assertTrue(Word.all().contains(secondWord));
   }
 
+  @Test // adds an ID to each word as we create it
+  public void getId_wordsInstantiateWithAnID_1() {
+    Word.clear(); // will fail without this
+    Word myWord = new Word("contrition");
+    assertEquals(1, myWord.getId());
+  }
+
 }
