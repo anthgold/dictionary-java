@@ -29,4 +29,12 @@ public class Word {
     return mId;
   }
 
+  public static Word find(int id) { // finds a specific word given its id
+    try {
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException exception) {
+      return null;
+    }
+  }
+
 }

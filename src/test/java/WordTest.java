@@ -30,11 +30,16 @@ public class WordTest {
     assertEquals(1, myWord.getId());
   }
 
-  @Test // finds a specific task given its id
+  @Test // finds a specific word given its id
   public void find_returnsWordWithSameId_secondWord() {
     Word firstWord = new Word("contrition");
     Word secondWord = new Word("home");
     assertEquals(Word.find(secondWord.getId()), secondWord);
+  }
+
+  @Test
+  public void find_returnsNullWhenNoWordFound_null() {
+    assertTrue(Word.find(999) == null);
   }
 
 }
