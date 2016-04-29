@@ -23,11 +23,12 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Dictionary");
   }
 
-/*  @Test  // nameOfFunction_testCase_expectedResult()
-  public void squareTestIsASquare() {
+  @Test
+  public void wordIsCreatedTest() {
     goTo("http://localhost:4567/");
-    // test goes here
-    // assertFoo(pageSource()).contains("Your foo is a bar!");
-  } */
+    fill(#term).with("contrition");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your word has been added.");
+  }
 
 }
