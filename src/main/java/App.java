@@ -20,7 +20,7 @@ public class App {
     post("/words", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
 
-      ArrayList<Word> words = request.session()attribute("words");
+      ArrayList<Word> words = request.session().attribute("words");
       if (words == null) {
         words = new ArrayList<Word>();
         request.session().attribute("words", words);

@@ -2,14 +2,6 @@
 
 ## <a href="/tasks/new">Add a new word</a> I expect this will come back in later
 
-#if ($word)
-  <p>Current word:</p>
-  <p>$word.getTerm()</p>
-#else
-  <p>No words!</p>
-#end
-
-#* This I will use later for multiple words
 #if ($words)
 <ul>
   #foreach ($word in $words)
@@ -19,7 +11,6 @@
 #else
   <p>No words!</p>
 #end
-*#
 
 <p>Add a new Word:</p>
 
