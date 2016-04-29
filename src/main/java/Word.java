@@ -1,8 +1,12 @@
 public class Word {
+  private String mTerm;
 
-  // The magic goes here
-  public Word(String description) {
+  public Word(String term) {
+    mTerm = term;
+  }
 
+  public String getTerm() {
+    return mTerm;
   }
 
 }
