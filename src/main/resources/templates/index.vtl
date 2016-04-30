@@ -1,22 +1,3 @@
 <h1>Dictionary</h1>
 
-## <a href="/tasks/new">Add a new word</a> I expect this will come back in later
-
-#if ($words)
-<ul>
-  #foreach ($word in $words)
-  <li>$word.getTerm()</li>
-  #end
-</ul>
-#else
-  <p>No words!</p>
-#end
-
-<p>Add a new Word:</p>
-
-<form action="/words" method="post">
-  <label for="term">Enter a word</label>
-  <input id="term" name="term" type="text"> ## does this have to be term as in Word.java?
-
-  <button type="submit" class="btn btn-default">Add word</button>
-</form>
+<a href="/words/new">Add a new word</a>
