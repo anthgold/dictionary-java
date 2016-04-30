@@ -27,6 +27,7 @@ public class AppTest extends FluentTest {
   @Test
   public void wordIsCreatedTest() {
     goTo("http://localhost:4567/");
+    click("a", withText("Add a new word"));
     fill("#term").with("contrition");
     submit(".btn");
     assertThat(pageSource()).contains("Your word has been added.");
@@ -34,22 +35,22 @@ public class AppTest extends FluentTest {
 
   @Test
   public void wordIsDisplayedTest() {
-    goTo("http://localhost:4567/");
+    goTo("http://localhost:4567/words/new");
     fill("#term").with("contrition");
     submit(".btn");
-    click("a", withText("Go Back"));
+    click("a", withText("View words"));
     assertThat(pageSource()).contains("contrition");
   }
 
   @Test
   public void multipleWordsAreDisplayedTest() {
-    goTo("http://localhost:4567/");
+    goTo("http://localhost:4567/words/new");
     fill("#term").with("contrition");
     submit(".btn");
-    click("a", withText("Go Back"));
+    goTo("http://localhost:4567/words/new");
     fill("#term").with("home");
     submit(".btn");
-    click("a", withText("Go Back"));
+    click("a", withText("View words"));
     assertThat(pageSource()).contains("contrition");
     assertThat(pageSource()).contains("home");
   }
