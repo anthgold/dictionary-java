@@ -25,32 +25,32 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void wordIsCreatedTest() {
+  public void definitionIsCreatedTest() {
     goTo("http://localhost:4567/");
-    click("a", withText("Add a new word"));
-    fill("#term").with("contrition");
+    click("a", withText("Add a new definition"));
+    fill("#meaning").with("contrition");
     submit(".btn");
-    assertThat(pageSource()).contains("Your word has been added.");
+    assertThat(pageSource()).contains("Your definition has been added.");
   }
 
   @Test
-  public void wordIsDisplayedTest() {
-    goTo("http://localhost:4567/words/new");
-    fill("#term").with("contrition");
+  public void definitionIsDisplayedTest() {
+    goTo("http://localhost:4567/definitions/new");
+    fill("#meaning").with("contrition");
     submit(".btn");
-    click("a", withText("View words"));
+    click("a", withText("View definitions"));
     assertThat(pageSource()).contains("contrition");
   }
 
   @Test
-  public void multipleWordsAreDisplayedTest() {
-    goTo("http://localhost:4567/words/new");
-    fill("#term").with("contrition");
+  public void multipleDefinitionsAreDisplayedTest() {
+    goTo("http://localhost:4567/definitions/new");
+    fill("#meaning").with("contrition");
     submit(".btn");
-    goTo("http://localhost:4567/words/new");
-    fill("#term").with("home");
+    goTo("http://localhost:4567/definitions/new");
+    fill("#meaning").with("home");
     submit(".btn");
-    click("a", withText("View words"));
+    click("a", withText("View definitions"));
     assertThat(pageSource()).contains("contrition");
     assertThat(pageSource()).contains("home");
   }
