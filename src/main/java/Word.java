@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Word {
+
   private String mTerm;
   // allows us to retrieve all words entered:
   private static ArrayList<Word> instances = new ArrayList<Word>();
@@ -12,6 +13,8 @@ public class Word {
     mId = instances.size(); // adds an ID to each word as we create it
   }
 
-
+  public static void clear() {
+    instances.clear();
+  }
 
 }
