@@ -29,6 +29,13 @@ public class WordTest {
     assertTrue(Word.all().contains(secondWord));
   }
 
+  @Test
+  public void clear_emptiesAllWordsFromList_0() {
+    Word testWord = new Word("humble");
+    Word.clear();
+    assertEquals(Word.all().size(), 0);
+  }
+
 
 
 }
