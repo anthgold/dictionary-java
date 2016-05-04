@@ -21,4 +21,14 @@ public class WordTest {
     assertEquals("humble", testWord.getTerm());
   }
 
+  @Test
+  public void all_returnsAllInstancesOfWord_true() {
+    Word firstWord = new Word("humble");
+    Word secondWord = new Word("grit");
+    assertTrue(Word.all().contains(firstWord));
+    assertTrue(Word.all().contains(secondWord));
+  }
+
+
+
 }
