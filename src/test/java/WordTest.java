@@ -9,12 +9,16 @@ public class WordTest {
     Definition.clear();
   }
 
-  @Test 
-  public void Word_instantiatesCorrectly_true() {
-    Word myWord = new Word("humble");
-    assertEquals(true, myWord instanceof Word);
+  @Test
+  public void word_instantiatesCorrectly_true() {
+    Word testWord = new Word("humble");
+    assertEquals(true, Word instanceof Word);
   }
 
-
+  @Test
+  public void getTerm_definitionInstantiatesWithTerm_Humble() {
+    Word testWord = new Word("humble");
+    assertEquals("humble", testWord.getTerm());
+  }
 
 }
