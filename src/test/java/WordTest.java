@@ -36,6 +36,12 @@ public class WordTest {
     assertEquals(Word.all().size(), 0);
   }
 
+  @Test
+  public void getId_wordsInstantiateWithAnID_1() {
+    Word testWord = new Word("humble");
+    assertEquals(1, testWord.getId());
+  }
+
 
 
 }
