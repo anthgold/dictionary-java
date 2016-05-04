@@ -54,4 +54,12 @@ public class WordTest {
       assertTrue(Word.find(999) == null);
     }
 
+  @Test
+  public void getWords_initiallyReturnsEmptyList_ArrayList() {
+    Word testWord = new Word("merry-go-round");
+    assertEquals(0, testWord.getWords().size());
+  }
+
+
+
 }
