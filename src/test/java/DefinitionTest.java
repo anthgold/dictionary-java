@@ -3,7 +3,13 @@ import static org.junit.Assert.*;
 
 public class DefinitionTest {
 
-  @Test // nameOfFunction_testCase_expectedResult()
+  @After
+  public void tearDown() {
+    Definition.clear();
+  }
+
+
+  @Test
   public void Definition_instantiatesCorrectly_true() {
     Definition myDefinition = new Definition("contrition");
     assertEquals(true, myDefinition instanceof Definition);
@@ -15,7 +21,7 @@ public class DefinitionTest {
     assertEquals("contrition", myDefinition.getMeaning());
   }
 
-  @Test // this will allow us to retrieve all definitions entered, or a "dictionary"
+  @Test
   public void all_returnsAllInstancesOfDefinition_true() {
     Definition firstDefinition = new Definition("contrition");
     Definition secondDefinition = new Definition("home");
@@ -23,14 +29,20 @@ public class DefinitionTest {
     assertTrue(Definition.all().contains(secondDefinition));
   }
 
-  @Test // adds an ID to each definition as we create it
+  @Test
+  public void clear_emptiesAllDefsFromList_0() {
+    Definition testDefinition = new Definition("contrition");
+    Definition.clear();
+    assertEquals(Definition.all().size(), 0);
+  }
+
+  @Test
   public void getId_definitionsInstantiateWithAnID_1() {
-    Definition.clear(); // will fail without this
     Definition myDefinition = new Definition("contrition");
     assertEquals(1, myDefinition.getId());
   }
 
-  @Test // finds a specific definition given its id
+  @Test
   public void find_returnsDefinitionWithSameId_secondDefinition() {
     Definition firstDefinition = new Definition("contrition");
     Definition secondDefinition = new Definition("home");
