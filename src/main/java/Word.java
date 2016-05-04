@@ -24,6 +24,8 @@ public class Word {
     return instances;
   }
 
-
+  public int getId() {
+    return mId;
+  }
 
 }
