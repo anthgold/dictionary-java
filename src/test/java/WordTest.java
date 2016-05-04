@@ -12,7 +12,7 @@ public class WordTest {
   @Test
   public void word_instantiatesCorrectly_true() {
     Word testWord = new Word("humble");
-    assertEquals(true, Word instanceof Word);
+    assertEquals(true, testWord instanceof Word);
   }
 
   @Test

@@ -13,6 +13,10 @@ public class Word {
     mId = instances.size(); // adds an ID to each word as we create it
   }
 
+  public String getTerm() {
+    return mTerm;
+  }
+
   public static void clear() {
     instances.clear();
   }
