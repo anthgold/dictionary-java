@@ -5,11 +5,13 @@ public class Word {
   private String mTerm;
   private static ArrayList<Word> instances = new ArrayList<Word>();
   private int mId;
+  private ArrayList<Word> mWords;
 
   public Word(String term) {
     mTerm = term;
     instances.add(this);
     mId = instances.size();
+    mWords = new ArrayList<Word>();
   }
 
   public String getTerm() {
@@ -35,5 +37,11 @@ public class Word {
       return null;
     }
   }
+
+  public ArrayList<Word> getWords() {
+    return mWords;
+  }
+
+
 
 }
