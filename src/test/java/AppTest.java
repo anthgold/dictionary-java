@@ -45,6 +45,15 @@ public class AppTest extends FluentTest {
   }
 
   // @Test
+  // public void definitionIsDisplayedTest() {
+  //   goTo("http://localhost:4567/definitions/new");
+  //   fill("#meaning").with("blah blah");
+  //   submit(".btn");
+  //   click("a", withText("View definitions"));
+  //   assertThat(pageSource()).contains("contrition");
+  // }
+
+  // @Test
   // public void multipleDefinitionsAreDisplayedTest() {
   //   goTo("http://localhost:4567/words/new");
   //   fill("#term").with("contrition");

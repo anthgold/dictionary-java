@@ -1,8 +1,8 @@
-<h1>Dictionary</h1>
+<h1>All words</h1>
 
 <ul>
-  #foreach ($definition in $definitions)
-  <li><a href="/definitions/$definition.getId">$definition.getMeaning()</a></li>
+  #foreach ($word in $words)
+  <li><a href="/words/$word.getId()">$word.getTerm()</a></li>
   #end
 </ul>
-<a href="/definitions/new">Add a new definition</a>
+<a href="/words/new">Add New Word</a>

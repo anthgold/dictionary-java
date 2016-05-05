@@ -29,10 +29,18 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-  //   get("/words", (request, response) -> {
+    get("/words", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("words", Word.all());
+      model.put("template", "templates/words.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
+  //   get("/definitions", (request, response) -> {
   //     HashMap<String, Object> model = new HashMap<String, Object>();
-  //     model.put("words", Word.all());
-  //     model.put("template", "templates/words.vtl");
+  //     model.put("definitions", Definition.all());
+  //     model.put("template", "templates/definitions.vtl");
   //     return new ModelAndView(model, layout);
   //   }, new VelocityTemplateEngine());
   //
