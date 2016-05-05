@@ -60,6 +60,12 @@ public class WordTest {
     assertEquals(0, testWord.getDefinitions().size());
   }
 
-  
+  @Test
+  public void addDefinition_addsDefinitionToList_true() {
+    Word testWord = new Word("fracas");
+    Definition testDefinition = new Definition("a noisy disturbance or quarrel");
+    testWord.addDefinition(testDefinition);
+    assertTrue(testWord.getDefinitions().contains(testDefinition));
+  }
 
 }
