@@ -15,26 +15,27 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-  //   get("definitions/new", (request, response) -> {
+    get("words/new", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/word-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/words", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String term = request.queryParams("term");
+      Word newWord = new Word(term);
+      model.put("template", "templates/word-success.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+  //   get("/words", (request, response) -> {
   //     HashMap<String, Object> model = new HashMap<String, Object>();
-      // model.put("template", "templates/definition-form.vtl");
+  //     model.put("words", Word.all());
+  //     model.put("template", "templates/words.vtl");
   //     return new ModelAndView(model, layout);
   //   }, new VelocityTemplateEngine());
   //
-  //   get("/definitions", (request, response) -> {
-  //     HashMap<String, Object> model = new HashMap<String, Object>();
-  //     model.put("definitions", Definition.all());
-  //     model.put("template", "templates/definitions.vtl");
-  //     return new ModelAndView(model, layout);
-  //   }, new VelocityTemplateEngine());
-  //
-  //   post("/definitions", (request, response) -> {
-  //     HashMap<String, Object> model = new HashMap<String, Object>();
-  //     String meaning = request.queryParams("meaning");
-  //     Definition newDefinition = new Definition(meaning);
-  //     model.put("template", "templates/success.vtl");
-  //     return new ModelAndView(model, layout);
-  //   }, new VelocityTemplateEngine());
 
   }
 

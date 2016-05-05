@@ -32,7 +32,7 @@ public class AppTest extends FluentTest {
     click("a", withText("Add a New Word"));
     fill("#term").with("contrition");
     submit(".btn");
-    assertThat(pageSource()).contains("Your word has been added.");
+    assertThat(pageSource()).contains("Your word has been saved.");
   }
   //
   // @Test
