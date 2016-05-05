@@ -23,23 +23,17 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("Dictionary");
     assertThat(pageSource()).contains("View Word List");
-    assertThat(pageSource()).contains("Add a New Word");  
+    assertThat(pageSource()).contains("Add a New Word");
   }
 
-  // @Test
-  // public void rootTest() {
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("Dictionary");
-  // }
-  //
-  // @Test
-  // public void definitionIsCreatedTest() {
-  //   goTo("http://localhost:4567/");
-  //   click("a", withText("Add a new definition"));
-  //   fill("#meaning").with("contrition");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("Your definition has been added.");
-  // }
+  @Test
+  public void wordIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add a New Word"));
+    fill("#term").with("contrition");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your word has been added.");
+  }
   //
   // @Test
   // public void definitionIsDisplayedTest() {
