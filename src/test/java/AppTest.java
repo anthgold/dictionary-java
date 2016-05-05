@@ -64,6 +64,11 @@ public class AppTest extends FluentTest {
   }
 
   // @Test
+  // public void wordDefinitionsFormIsDisplayed() {
+  //
+  // }
+
+  // @Test
   // public void multipleDefinitionsAreDisplayedTest() {
   //   goTo("http://localhost:4567/words/new");
   //   fill("#term").with("contrition");
