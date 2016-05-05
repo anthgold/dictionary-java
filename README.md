@@ -9,6 +9,16 @@
 This is the solo coding exercise from the Epicodus Java course, week 2. It creates a program that lets users create a dictionary. It makes two classes: one for Word, and one for Definition. The homepage of the app lists out all of the words, and lets you click on them to view all of their definitions. The user is able to add a word, and when viewing a word, to add one or more definitions.
 
 
+## Setup/Installation Requirements
+
+You will need to install the Java development kit (Java SDK)  and the Java Runtime Environment (JRE), along with Gradle.
+
+
+## Known bugs
+
+None
+
+
 ## Support and contact details
 
 Questions? Concerns? Sympathy? Sushi? Email: anthgold@at@gmail.com
