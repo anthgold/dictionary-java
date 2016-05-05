@@ -53,6 +53,16 @@ public class AppTest extends FluentTest {
   //   assertThat(pageSource()).contains("contrition");
   // }
 
+  @Test
+  public void wordShowPageDisplaysTerm() {
+    goTo("http://localhost:4567/words/new");
+    fill("#term").with("contrition");
+    submit(".btn");
+    click("a", withText("View words"));
+    click("a", withText("contrition"));
+    assertThat(pageSource()).contains("contrition");
+  }
+
   // @Test
   // public void multipleDefinitionsAreDisplayedTest() {
   //   goTo("http://localhost:4567/words/new");
