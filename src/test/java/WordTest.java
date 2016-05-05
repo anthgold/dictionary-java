@@ -55,11 +55,11 @@ public class WordTest {
     }
 
   @Test
-  public void getWords_initiallyReturnsEmptyList_ArrayList() {
+  public void getDefinitions_initiallyReturnsEmptyList_ArrayList() {
     Word testWord = new Word("merry-go-round");
-    assertEquals(0, testWord.getWords().size());
+    assertEquals(0, testWord.getDefinitions().size());
   }
 
-
+  
 
 }
