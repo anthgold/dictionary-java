@@ -34,25 +34,25 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("Your word has been saved.");
   }
-  //
-  // @Test
-  // public void definitionIsDisplayedTest() {
-  //   goTo("http://localhost:4567/definitions/new");
-  //   fill("#meaning").with("contrition");
-  //   submit(".btn");
-  //   click("a", withText("View definitions"));
-  //   assertThat(pageSource()).contains("contrition");
-  // }
-  //
+
+  @Test
+  public void wordIsDisplayedTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#term").with("contrition");
+    submit(".btn");
+    click("a", withText("View words"));
+    assertThat(pageSource()).contains("contrition");
+  }
+
   // @Test
   // public void multipleDefinitionsAreDisplayedTest() {
-  //   goTo("http://localhost:4567/definitions/new");
-  //   fill("#meaning").with("contrition");
+  //   goTo("http://localhost:4567/words/new");
+  //   fill("#term").with("contrition");
   //   submit(".btn");
-  //   goTo("http://localhost:4567/definitions/new");
-  //   fill("#meaning").with("home");
+  //   goTo("http://localhost:4567/words/new");
+  //   fill("#term").with("home");
   //   submit(".btn");
-  //   click("a", withText("View definitions"));
+  //   click("a", withText("View words"));
   //   assertThat(pageSource()).contains("contrition");
   //   assertThat(pageSource()).contains("home");
   // }
