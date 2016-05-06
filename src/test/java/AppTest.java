@@ -65,6 +65,23 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Add a definition to hip-hop");
   }
 
+  @Test
+  public void definitionsIsAddedAndDisplayed() {
+    goTo("http://localhost:4567/words/new");
+    fill("#term").with("boogaloo");
+    submit(".btn");
+    click("a", withText("View words"));
+    click("a", withText("boogaloo"));
+    click("a", withText("Add a new definition"));
+
+    fill("#meaning").with("bug out");
+    submit(".btn");
+    click("a", withText("View words"));
+    click("a", withText("boogaloo"));
+
+    assertThat(pageSource()).contains("bug out");
+  }
+
   // @Test
   // public void multipleDefinitionsAreDisplayedTest() {
   //   goTo("http://localhost:4567/words/new");
