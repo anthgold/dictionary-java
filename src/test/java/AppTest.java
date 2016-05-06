@@ -56,11 +56,11 @@ public class AppTest extends FluentTest {
   @Test
   public void wordShowPageDisplaysTerm() {
     goTo("http://localhost:4567/words/new");
-    fill("#term").with("contrition");
+    fill("#term").with("bongo");
     submit(".btn");
     click("a", withText("View words"));
-    click("a", withText("contrition"));
-    assertThat(pageSource()).contains("contrition");
+    click("a", withText("bongo"));
+    assertThat(pageSource()).contains("bongo");
   }
 
   // @Test
