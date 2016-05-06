@@ -44,15 +44,6 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("contrition");
   }
 
-  // @Test
-  // public void definitionIsDisplayedTest() {
-  //   goTo("http://localhost:4567/definitions/new");
-  //   fill("#meaning").with("blah blah");
-  //   submit(".btn");
-  //   click("a", withText("View definitions"));
-  //   assertThat(pageSource()).contains("contrition");
-  // }
-
   @Test
   public void wordShowPageDisplaysTerm() {
     goTo("http://localhost:4567/words/new");
@@ -63,10 +54,16 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("bongo");
   }
 
-  // @Test
-  // public void wordDefinitionsFormIsDisplayed() {
-  //
-  // }
+  @Test
+  public void wordDefinitionsFormIsDisplayed() {
+    goTo("http://localhost:4567/words/new");
+    fill("#term").with("hip-hop");
+    submit(".btn");
+    click("a", withText("View words"));
+    click("a", withText("hip-hop"));
+    click("a", withText("Add a new definition"));
+    assertThat(pageSource()).contains("Add a definition to hip-hop");
+  }
 
   // @Test
   // public void multipleDefinitionsAreDisplayedTest() {
