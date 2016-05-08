@@ -82,17 +82,4 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("bug out");
   }
 
-  // @Test
-  // public void multipleDefinitionsAreDisplayedTest() {
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#term").with("contrition");
-  //   submit(".btn");
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#term").with("home");
-  //   submit(".btn");
-  //   click("a", withText("View words"));
-  //   assertThat(pageSource()).contains("contrition");
-  //   assertThat(pageSource()).contains("home");
-  // }
-
 }
